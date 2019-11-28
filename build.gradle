@@ -31,7 +31,11 @@ compileTestKotlin {
 repositories {
 	mavenCentral()
 }
-
+apply plugin: 'application'
+mainClassName = "br.com.alexf.ceepws.CeepwsApplication.kt"
+task stage {
+	dependsOn installDist
+}
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
