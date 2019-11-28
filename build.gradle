@@ -28,15 +28,13 @@ compileTestKotlin {
 	kotlinOptions.jvmTarget = "1.8"
 }
 
+task runExample(type: JavaExec) {
+	main = 'br.com.alexf.ceepws.CeepwsApplication.kt'
+	classpath = sourceSets.main.runtimeClasspath
+}
 repositories {
 	mavenCentral()
 }
-apply plugin: 'application'
-mainClassName = "br.com.alexf.ceepws.CeepwsApplication.kt"
-task stage {
-	dependsOn installDist
-}
-
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
