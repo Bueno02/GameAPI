@@ -28,10 +28,6 @@ compileTestKotlin {
 	kotlinOptions.jvmTarget = "1.8"
 }
 
-task runExample(type: JavaExec) {
-	main = 'br.com.alexf.ceepws.CeepwsApplication.kt'
-	classpath = sourceSets.main.runtimeClasspath
-}
 repositories {
 	mavenCentral()
 }
@@ -43,4 +39,10 @@ dependencies {
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('org.hsqldb:hsqldb')
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+apply plugin: 'application'
+mainClassName = 'br.com.alexf.ceepws.CeepwsApplication.kt'
+task stage {
+	dependsOn installDist
 }
