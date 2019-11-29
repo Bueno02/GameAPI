@@ -42,7 +42,7 @@ dependencies {
 }
 
 apply plugin: 'application'
-mainClassName = 'br.com.alexf.ceepws.CeepwsApplication.kt'
+mainClassName = 'br.com.alexf.ceepws.CeepwsApplicationKt'
 task stage {
 	dependsOn installDist
 }
